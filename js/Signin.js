@@ -10,33 +10,27 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// save the data
 $("#Login").submit(function(e) {
   e.preventDefault();
-  // get the user name and password from form
-  // You need to change this.
-  var email = "doryanz@gmail.com";
-  var password = "tacoeater1";
+
+  // get the username(email) and password from the form
+  var email = "brendone@usca.edu";
+  var password = "dsdsds";
+
+  // sign in
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(success => {
-      // Signed in
-      // ...
-      console.log("login in");
-      let user = firebase.auth().currentUser;
+      console.log("Login in successfully");
 
-      //user.updateProfile({ displayName: "Not sure" });
-      if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        console.log(name + email + emailVerified);
-      }
+      //optional
+      let user = firebase.auth().currentUser;
+      console.log(
+        user.displayName + " " + user.email + " " + user.emailVerified
+      );
     })
     .catch(error => {
-      var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorMessage);
     });
