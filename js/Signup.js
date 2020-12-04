@@ -5,8 +5,8 @@ var firebaseConfig = {
   projectId: "assignment7-15e08",
   storageBucket: "assignment7-15e08.appspot.com",
   messagingSenderId: "982981695217",
-  appId: "1:982981695217:web:cd6c8d5e2d301dcf61bb50",
-  measurementId: "G-G0K4SN028Y"
+  appId: "1:982981695217:web:2b7d778929b40e3561bb50",
+  measurementId: "G-3VZ6QBJVVK"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -37,5 +37,3 @@ $("#signup-form").submit(function(e) {
       console.log(errorMessage);
     });
 });
-
-
